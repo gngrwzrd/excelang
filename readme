@@ -1,0 +1,4 @@
+the excelang gem simplifies language translation; it does two things:
+
+1. It can read an xml document that contains copy, and create an excel sheet, which can be sent for translation.
+2. It can read an excel sheet, and output translated copy into xml.

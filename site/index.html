@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Excel Translation Helper</title>
+	<style>
+		body
+		{
+			margin-left:20px;
+			font:1.02em verdana;
+		}
+		h2
+		{
+			color:#00CCFF;
+			text-transform:uppercase;
+		}
+		a
+		{
+			color:#ff0066;
+			text-decoration:none;
+		}
+		a:hover
+		{
+			color:#ff0066;
+		}
+		div.indent{padding-left:20px;}
+		#wrapper{margin-bottom:25px;}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="summary">
+		<h2>excelang summary</h2>
+		<div class="indent">
+			<p>The excelang tool is a gem that helps with language translations, it does two things:</p>
+			<ol>
+				<li>Reads a given excel document, and outputs xml lanuage files with text nodes.</li>
+				<li>Reads xml language file(s), and creates an excel file.</li>
+			</ol>
+			<p>This tool relieves a developer from manual xml and excel exporting. Usually a developer creates
+				a site in english and an english.xml file for copy. As soon as the site needs to be localized,
+				you'd use this tool to create an excel sheet from the english.xml file, send it to a producer,
+				then gets sent to a company to localize. When it comes back, you use this tool to create xml
+				from the excel sheet.
+			</p>
+			<p>It also attempts to correct microsoft word special characters. Every single character cannot be accounted for, but
+				all the common ones are.</p>
+		</div>
+	</div>
+	<div id="exceltemplate">
+		<h2>excel formats</h2>
+		<div class="indent">
+			<p>xls and xlsx.</p>
+		</div>
+	</div>
+	<div id="exceltemplate">
+		<h2>excel and xml formats</h2>
+		<div class="indent">
+			<p>The excelang tool has a required format that must be followed.</p>
+			<p>Here are the templates:</p>
+			<ul>
+				<li><a href="example.xml">xml file template</a></li>
+				<li><a href="example.xlsx">excel file template</a> (right click -> save as)</li>
+			</ul>
+		</div>
+	</div>
+	<div id="installation">
+	<h2>installation steps</h2>
+		<div class="indent">
+			<p>Installation is a fairly painless process - but you will need administration rights.
+			<h4>windows:</h4>
+			<ol>
+				<li>Install "Ruby" <a href="ruby186-27_rc2.exe">with this installer</a>.
+					<strong>Make sure to "Enable RubyGems" from the "Choose Components" screen during installation.</strong></li>
+				<li>Download <a href="http://downloads.sourceforge.net/console/Console-2.00b142-Beta.zip?modtime=1232391855&big_mirror=0">"Console 2"</a>, which is a different console application. You should use this instead of the built in windows DOS command prompt</li>
+				<li>Unzip the console 2 file, and run the "Console.exe" executable.</li>
+				<li>Add gems.codeendeavor.com to the gem sources, run this command: <em>gem sources --add http://gems.codeendeavor.com</em> [ENTER]</li>
+				<li>Install the spreadsheet gem, run command: <em>gem install spreadsheet</em> [ENTER]</li>
+				<li>Install the roo gem, run command: <em>gem install roo</em> [ENTER]</li>
+				<li>Install the excelang gem, run command: <em>gem install excelang</em> [ENTER]</li>
+			</ol>
+			<h4>mac:</h4>
+			<ol>
+				<li>Ruby and RubyGems are installed by default on mac. Go to next step.</li>
+				<li>Open a terminal window (/Applications/Utilities/Terminal)</li>
+				<li>Update RubyGems, run command: <em>sudo gem update --system</em></li>
+				<li>Add gems.mccannsf.com to the gem sources, run this command: <em>gem sources --add http://gems.mccannsf.com</em> [ENTER]</li>
+				<li>Install the spreadsheet gem, run command: <em>sudo gem install spreadsheet</em> [ENTER]</li>
+				<li>Enter your password</li>
+				<li>Install the roo gem, run command: <em>sudo gem install roo</em> [ENTER]</li>
+				<li>Install the hpricot gem, run command: <em>sudo gem install hpricot</em> [ENTER]</li>
+				<li>Install the excelang gem, run command: <em>sudo gem install excelang</em> [ENTER]</li>
+			</ol>
+		</div>
+	</div>
+	<div id="usage">
+		<h2>usage</h2>
+		<div class="indent">
+			<p>Converting an excel language file into xml:</p>
+			<div class="indent">
+				<p><em>excelang -i myExcelFile.xls</em></p>
+			</div>
+			<p>Converting one or more xml files into an excel language file:</p>
+			<div class="indent">
+				<ul>
+					<li>one file: <em>excelang -i english.xml</em></li>
+					<li>*multiple files: <em>excelang -i english.xml,spanish.xml</em></li>
+				</ul>
+				<p><small><small>*With multiple xml files, it creates one excel file that contains all copy.</small></small></p>
+			</div>
+		</div>
+	</div>
+	<div id="example">
+		<h2>example</h2>
+		<div class="indent">
+			<p><a href="example.zip">Here's an example zip</a>, it contains files you can test with.
+		</div>
+	</div>
+</div>
+</body>
+</html>
